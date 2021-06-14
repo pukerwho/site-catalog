@@ -1,0 +1,4 @@
+/*@import 'tailwind.css';*/
+@import 'generate/var.css';
+@import 'generate/common.css';
+@import 'generate/elements.css';

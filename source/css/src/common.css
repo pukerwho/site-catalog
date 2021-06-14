@@ -1,0 +1,100 @@
+body {
+	background-color: var(--bg-gray);
+}
+
+input, textarea {
+	display: block;
+	width: 100%;
+	padding: .75rem 1.25rem;
+	font-size: .875rem;
+	font-weight: 400;
+	line-height: 1.6;
+	color: #18113c;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #dbd8e9;
+	border-radius: .25rem;
+	-webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+	transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+	-o-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+	margin-bottom: 1rem;
+}
+
+input[type="submit"] {
+	background-color: var(--color-green);
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.bg-primary {
+	background-color: var(--color-primary);
+}
+
+.color-primary {
+	color: var(--color-primary);
+}
+
+.color-yellow {
+	color: var(--color-yellow);
+}
+
+.gradient_main {
+	background-color: #766df4;
+	background-image: -o-linear-gradient(left, #766df4 0%, #766df4 30%, #6a9bf4 100%);
+	background-image: -webkit-gradient(linear, left top, right top, from(#766df4), color-stop(30%, #766df4), to(#6a9bf4));
+	background-image: linear-gradient(to right, #766df4 0%, #766df4 30%, #6a9bf4 100%);
+}
+
+.border-bottom-light {
+	border-bottom: 1px solid #eeeeee;
+}
+
+.border-top-gray {
+	border-top: 1px solid #cccccc;
+}
+
+.border_top_gradient_main {
+	border-style: solid;
+  border-top-width: 2px;
+  border-top-color: #335eea;
+}
+
+.shadow_custom {
+	-webkit-box-shadow: -0.0625rem 0 0.625rem 0 rgb(0 0 0 / 7%), 0.3125rem 1.25rem 2.5rem 0 rgb(0 0 0 / 4%) !important;
+	box-shadow: -0.0625rem 0 0.625rem 0 rgb(0 0 0 / 7%), 0.3125rem 1.25rem 2.5rem 0 rgb(0 0 0 / 4%) !important;
+}
+
+.content {
+	h1, h2, h3, h4 {
+		position: relative;
+		display: inline-block;
+		&:after {
+			content: '';
+			width: 100%;
+			height: 15px;
+			position: absolute;
+			bottom: 0px; left: 0;
+			background-image: url(../../../img/icons/wave.svg);
+			background-size: contain;
+		}
+	}
+	h2 {
+		font-size: 1.85rem;
+		padding: 20px 0;
+		margin-bottom: 15px;
+	}
+	p {
+		font-size: 1.25rem;
+		margin-bottom: 1rem;
+	}
+	ul {
+		margin-left: 1rem;
+		margin-bottom: 1rem;
+		li {
+			font-size: 1.25rem;
+			list-style-type: disc;
+		}
+	}
+}
