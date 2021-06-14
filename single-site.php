@@ -125,7 +125,7 @@
                     </svg>
                   </div>
                   <span class="font-bold mr-1"><?php _e('Возраст сайта', 'dansite'); ?>:</span>
-                  <span class="opacity-75 text-red-500"><?php echo carbon_get_the_post_meta('crb_site_age'); ?></span>
+                  <span class="opacity-75"><?php echo carbon_get_the_post_meta('crb_site_age'); ?></span>
                 </div>
                 <div class="flex items-center mb-2">
                   <div class="mr-2">
@@ -134,7 +134,7 @@
                     </svg>
                   </div>
                   <span class="font-bold mr-1"><?php _e('Регистратор', 'dansite'); ?>:</span>
-                  <span class="opacity-75 text-red-500"><?php echo carbon_get_the_post_meta('crb_site_registrator'); ?></span>
+                  <span class="opacity-75"><?php echo carbon_get_the_post_meta('crb_site_registrator'); ?></span>
                 </div>
                 <div class="flex items-center mb-6">
                   <div class="mr-2">
