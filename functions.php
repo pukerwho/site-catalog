@@ -187,5 +187,5 @@ add_shortcode( 'snapshot', function ( $atts ) {
     }
   }
 
-  return '<img src="' . esc_attr( $src ) . '" alt="' . esc_attr( $atts['alt'] ) . '" class="w-full h-48 object-fit object-top rounded-t-lg"/>';
+  return '<img src="' . esc_attr( $src ) . '" alt="' . esc_attr( $atts['alt'] ) . '" class="w-full h-48 object-cover object-top rounded-t-lg"/>';
 } );

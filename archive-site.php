@@ -106,19 +106,19 @@
             </div>
           </div>
         <?php endwhile; endif; wp_reset_postdata(); ?>
-        <div class="pagination flex justify-center items-center">
-          <?php 
-            $big = 9999999991; // уникальное число
-            echo paginate_links( array(
-              'format' => '?page=%#%',
-              'total' => $query_sites->max_num_pages,
-              'current' => $current_page,
-              'prev_next' => true,
-              'next_text' => (''),
-              'prev_text' => (''),
-            )); 
-          ?>
-        </div>
+      </div>
+      <div class="pagination flex justify-center items-center">
+        <?php 
+          $big = 9999999991; // уникальное число
+          echo paginate_links( array(
+            'format' => '?page=%#%',
+            'total' => $query_sites->max_num_pages,
+            'current' => $current_page,
+            'prev_next' => true,
+            'next_text' => (''),
+            'prev_text' => (''),
+          )); 
+        ?>
       </div>
     </div>
   </div>
