@@ -74,7 +74,7 @@
           </div>
         </div>
       </div>
-      <div class="w-full flex flex-col ">
+      <div class="w-full flex flex-col">
         <div class="w-full flex-wrap md:w-3/4 mb-6 md:mb-0">
           <?php if ($query_sites->have_posts()) : while ($query_sites->have_posts()) : $query_sites->the_post(); ?>
             <div class="w-full md:w-1/3 md:px-4 mb-6">
