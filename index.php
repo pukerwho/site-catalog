@@ -12,7 +12,7 @@
 				</div>
 				<div class="flex flex-col md:flex-row md:items-center">
 					<div class="mb-4 md:mb-0 md:mr-4">
-						<a href="<?php echo get_page_url('tpl_catalog'); ?>" class="block bg-green-400 rounded text-center px-8 py-4">
+						<a href="<?php echo get_post_type_archive_link('site'); ?>" class="block bg-green-400 rounded text-center px-8 py-4">
 							<?php _e('Перейти в каталог', 'dansite'); ?>	
 						</a>
 					</div>
