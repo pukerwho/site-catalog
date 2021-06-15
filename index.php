@@ -129,10 +129,10 @@
 										<?php get_template_part('blocks/components/stars'); ?>		
 									</div>
 									<div class="color-yellow mr-2">
-										4.8
+										<?php echo carbon_get_the_post_meta('crb_site_rating'); ?>
 									</div>
 									<div class="opacity-75">
-										(3440)
+										(<?php echo carbon_get_the_post_meta('crb_site_rating_count'); ?>)
 									</div>
 								</div>
 							</div>
