@@ -49,10 +49,10 @@
           </div>
           <div class="border-bottom-light py-4">
             <?php 
-            $all_terms = get_terms('dan-list', array( 'parent' => 0 ) );
+            $all_terms = get_terms('dan-category', array( 'parent' => 0 ) );
             foreach ($all_terms as $single_term): ?>
               <?php if ($single_term): ?>
-                <a href="<?php echo get_term_link($single_term->term_id, 'dan-list') ?>" class="block text-sm opacity-75 px-6 mb-2 hover:text-blue-800">
+                <a href="<?php echo get_term_link($single_term->term_id, 'dan-category') ?>" class="block text-sm opacity-75 px-6 mb-2 hover:text-blue-800">
                   <?php echo $single_term->name; ?>
                 </a>
               <?php endif; ?>
