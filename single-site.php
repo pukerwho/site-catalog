@@ -46,7 +46,11 @@
         <!-- Скриншот and info mobile -->
         <div class="bg-white rounded-lg mb-6">
           <div class="block md:hidden p-2">
-            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="<?php the_title(); ?>" class="w-full h-52 object-fit object-top rounded-t-lg mb-3">
+            <?php 
+              $site_snap = carbon_get_the_post_meta('crb_site_url'); 
+              $site_title = get_the_title();
+            ?>
+            <?php echo do_shortcode('[snapshot url="'. $site_snap .'" alt="'. $site_title . '" width="400" height="300"]'); ?>
             <div class="text-center italic opacity-75 mb-6"><?php _e('Скриншот сделан', 'dansite'); ?>: <?php echo date("m.d.Y"); ?></div>
             <div class="flex items-center text-sm px-4 mb-4">
               <div class="mr-2">
@@ -224,7 +228,11 @@
                 if ($custom_query->have_posts()) : while ($custom_query->have_posts()) : $custom_query->the_post(); ?>
                 <div class="flex flex-col md:flex-row border-bottom-light py-4">
                   <div class="w-full md:w-1/4 mr-4 mb-6 md:mb-0">
-                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium') ?>" alt="" loading="lazy" class="w-full h-40 object-fit object-top rounded-lg">
+                    <?php 
+                      $site_similar_snap = carbon_get_the_post_meta('crb_site_url'); 
+                      $site_similar_title = get_the_title();
+                    ?>
+                    <?php echo do_shortcode('[snapshot url="'. $site_similar_snap .'" alt="'. $site_similar_title . '" width="400" height="300"]'); ?>
                   </div>
                   <div class="w-full md:w-3/4">
                     <div class="text-xl font-medium mb-4">
@@ -261,7 +269,7 @@
         <!-- Скриншот and info -->
         <div class="bg-white rounded-lg mb-6">
           <div class="hidden md:block p-2">
-            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="<?php the_title(); ?>" class="w-full h-52 object-fit object-top rounded-t-lg mb-3">
+            <?php echo do_shortcode('[snapshot url="'. $site_snap .'" alt="'. $site_title . '" width="400" height="300"]'); ?>
             <div class="text-center italic opacity-75 mb-6"><?php _e('Скриншот сделан', 'dansite'); ?>: <?php echo date("m.d.Y"); ?></div>
             <div class="flex items-center text-sm px-4 mb-4">
               <div class="mr-2">

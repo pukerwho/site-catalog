@@ -13,7 +13,7 @@
 
   $query_sites = new WP_Query( array( 
     'post_type' => 'site', 
-    'posts_per_page' => 1,
+    'posts_per_page' => 16,
     'order'    => 'DESC',
     'paged' => $current_page,
     'tax_query' => array(
@@ -74,13 +74,17 @@
           </div>
         </div>
       </div>
-      <div class="w-full md:w-3/4 mb-6 md:mb-0">
+      <div class="w-full flex flex-wrap md:w-3/4 mb-6 md:mb-0">
         <?php if ($query_sites->have_posts()) : while ($query_sites->have_posts()) : $query_sites->the_post(); ?>
           <div class="w-full md:w-1/3 md:px-4 mb-6">
             <div class="h-full bg-white relative rounded-b-lg pb-4">
               <a href="<?php the_permalink(); ?>" class="w-full h-full absolute t-0 l-0 z-10"></a>
               <div class="mb-4">
-                <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="<?php the_title(); ?>" class="w-full h-48 object-fit object-top rounded-t-lg">
+                <?php 
+                  $site_snap = carbon_get_the_post_meta('crb_site_url'); 
+                  $site_title = get_the_title();
+                ?>
+                <?php echo do_shortcode('[snapshot url="'. $site_snap .'" alt="'. $site_title . '" width="400" height="300"]'); ?>
               </div>
               <div class="flex flex-col justify-between">
                 
@@ -111,10 +115,10 @@
                       <?php get_template_part('blocks/components/stars'); ?>    
                     </div>
                     <div class="color-yellow mr-2">
-                      4.8
+                      <?php echo carbon_get_the_post_meta('crb_site_rating'); ?>
                     </div>
                     <div class="opacity-75">
-                      (3440)
+                      (<?php echo carbon_get_the_post_meta('crb_site_rating_count'); ?>)
                     </div>
                   </div>
                 </div>

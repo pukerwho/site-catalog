@@ -79,19 +79,26 @@
 
 <div class="container mx-auto px-4 md:px-0 mb-12">
 	<div class="w-full md:w-11/12 mx-auto">
+		
 		<h2 class="text-3xl font-bold mb-10"><?php _e('Популярные сайты', 'dansite'); ?></h2>
 		<div class="flex flex-col md:flex-row flex-wrap md:-mx-4">
 			<?php 
 			$rest_popular = new WP_Query( array( 
 				'post_type' => 'site', 
 				'posts_per_page' => 8,
+		    'orderby' => 'crb_site_count_view',
+		    'order' => 'ASC'
 			) );
 			if ($rest_popular->have_posts()) : while ($rest_popular->have_posts()) : $rest_popular->the_post(); ?>
 				<div class="w-full md:w-1/4 md:px-4 mb-6">
 					<div class="h-full bg-white relative rounded-b-lg pb-4">
 						<a href="<?php the_permalink(); ?>" class="w-full h-full absolute t-0 l-0 z-10"></a>
 						<div class="mb-4">
-							<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="<?php the_title(); ?>" class="w-full h-48 object-fit object-top rounded-t-lg">
+							<?php 
+								$site_snap = carbon_get_the_post_meta('crb_site_url'); 
+								$site_title = get_the_title();
+							?>
+							<?php echo do_shortcode('[snapshot url="'. $site_snap .'" alt="'. $site_title . '" width="400" height="300"]'); ?>
 						</div>
 						<div class="flex flex-col justify-between">
 							
@@ -155,7 +162,11 @@
 					<div class="h-full bg-white relative rounded-b-lg pb-4">
 						<a href="<?php the_permalink(); ?>" class="w-full h-full absolute t-0 l-0 z-10"></a>
 						<div class="mb-4">
-							<img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium'); ?>" alt="<?php the_title(); ?>" class="w-full h-48 object-fit object-top rounded-t-lg">
+							<?php 
+								$site_snap = carbon_get_the_post_meta('crb_site_url'); 
+								$site_title = get_the_title();
+							?>
+							<?php echo do_shortcode('[snapshot url="'. $site_snap .'" alt="'. $site_title . '" width="400" height="300"]'); ?>
 						</div>
 						<div class="flex flex-col justify-between">
 							
@@ -186,10 +197,10 @@
 										<?php get_template_part('blocks/components/stars'); ?>		
 									</div>
 									<div class="color-yellow mr-2">
-										4.8
+										<?php echo carbon_get_the_post_meta('crb_site_rating'); ?>
 									</div>
 									<div class="opacity-75">
-										(3440)
+										(<?php echo carbon_get_the_post_meta('crb_site_rating_count'); ?>)
 									</div>
 								</div>
 							</div>
