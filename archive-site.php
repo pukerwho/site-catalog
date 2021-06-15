@@ -53,7 +53,7 @@
           <?php 
           $rest_popular = new WP_Query( array( 
             'post_type' => 'site', 
-            'posts_per_page' => 16,
+            'posts_per_page' => 15,
           ) );
           if ($rest_popular->have_posts()) : while ($rest_popular->have_posts()) : $rest_popular->the_post(); ?>
             <div class="w-full md:w-1/3 md:px-4 mb-6">
