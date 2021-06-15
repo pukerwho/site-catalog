@@ -74,73 +74,75 @@
           </div>
         </div>
       </div>
-      <div class="w-full flex flex-wrap md:w-3/4 mb-6 md:mb-0">
-        <?php if ($query_sites->have_posts()) : while ($query_sites->have_posts()) : $query_sites->the_post(); ?>
-          <div class="w-full md:w-1/3 md:px-4 mb-6">
-            <div class="h-full bg-white relative rounded-b-lg pb-4">
-              <a href="<?php the_permalink(); ?>" class="w-full h-full absolute t-0 l-0 z-10"></a>
-              <div class="mb-4">
-                <?php 
-                  $site_snap = carbon_get_the_post_meta('crb_site_url'); 
-                  $site_title = get_the_title();
-                ?>
-                <?php echo do_shortcode('[snapshot url="'. $site_snap .'" alt="'. $site_title . '" width="400" height="300"]'); ?>
-              </div>
-              <div class="flex flex-col justify-between">
-                
-                <!-- Инфо - вверх -->
-                <div>
-                  <div class="text-bold mb-4 px-4">
-                    <?php the_title(); ?>   
-                  </div>
+      <div class="w-full md:w-3/4 flex flex-wrap flex-col">
+        <div class="w-full flex flex-wrap mb-6 md:mb-0">
+          <?php if ($query_sites->have_posts()) : while ($query_sites->have_posts()) : $query_sites->the_post(); ?>
+            <div class="w-full md:w-1/3 md:px-4 mb-6">
+              <div class="h-full bg-white relative rounded-b-lg pb-4">
+                <a href="<?php the_permalink(); ?>" class="w-full h-full absolute t-0 l-0 z-10"></a>
+                <div class="mb-4">
+                  <?php 
+                    $site_snap = carbon_get_the_post_meta('crb_site_url'); 
+                    $site_title = get_the_title();
+                  ?>
+                  <?php echo do_shortcode('[snapshot url="'. $site_snap .'" alt="'. $site_title . '" width="400" height="300"]'); ?>
                 </div>
-                <!-- END Инфо - вверх -->
+                <div class="flex flex-col justify-between">
+                  
+                  <!-- Инфо - вверх -->
+                  <div>
+                    <div class="text-bold mb-4 px-4">
+                      <?php the_title(); ?>   
+                    </div>
+                  </div>
+                  <!-- END Инфо - вверх -->
 
-                <!-- Инфо - низ -->
-                <div>
-                  <div class="flex items-center text-sm px-4 mb-4">
-                    <div class="mr-2">
-                      <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icons/cat.svg" width="15" class="-mt-1">
+                  <!-- Инфо - низ -->
+                  <div>
+                    <div class="flex items-center text-sm px-4 mb-4">
+                      <div class="mr-2">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icons/cat.svg" width="15" class="-mt-1">
+                      </div>
+                      <?php 
+                      $current_term = wp_get_post_terms(  get_the_ID() , 'dan-list', array( 'parent' => 0 ) );
+                      foreach (array_slice($current_term, 0,1) as $myterm); {
+                      } ?>
+                      <?php if ($myterm): ?>
+                        <?php echo $myterm->name; ?>
+                      <?php endif; ?>
                     </div>
-                    <?php 
-                    $current_term = wp_get_post_terms(  get_the_ID() , 'dan-list', array( 'parent' => 0 ) );
-                    foreach (array_slice($current_term, 0,1) as $myterm); {
-                    } ?>
-                    <?php if ($myterm): ?>
-                      <?php echo $myterm->name; ?>
-                    <?php endif; ?>
+                    <div class="flex items-center px-4">
+                      <div class="mr-2">
+                        <?php get_template_part('blocks/components/stars'); ?>    
+                      </div>
+                      <div class="color-yellow mr-2">
+                        <?php echo carbon_get_the_post_meta('crb_site_rating'); ?>
+                      </div>
+                      <div class="opacity-75">
+                        (<?php echo carbon_get_the_post_meta('crb_site_rating_count'); ?>)
+                      </div>
+                    </div>
                   </div>
-                  <div class="flex items-center px-4">
-                    <div class="mr-2">
-                      <?php get_template_part('blocks/components/stars'); ?>    
-                    </div>
-                    <div class="color-yellow mr-2">
-                      <?php echo carbon_get_the_post_meta('crb_site_rating'); ?>
-                    </div>
-                    <div class="opacity-75">
-                      (<?php echo carbon_get_the_post_meta('crb_site_rating_count'); ?>)
-                    </div>
-                  </div>
+                  <!-- END Инфо - низ -->
+
                 </div>
-                <!-- END Инфо - низ -->
-
               </div>
             </div>
-          </div>
-        <?php endwhile; endif; wp_reset_postdata(); ?>
-      </div>
-      <div class="pagination flex justify-center items-center">
-        <?php 
-          $big = 9999999991; // уникальное число
-          echo paginate_links( array(
-            'format' => '?page=%#%',
-            'total' => $query_sites->max_num_pages,
-            'current' => $current_page,
-            'prev_next' => true,
-            'next_text' => (''),
-            'prev_text' => (''),
-          )); 
-        ?>
+          <?php endwhile; endif; wp_reset_postdata(); ?>
+        </div>
+        <div class="pagination flex justify-center items-center">
+          <?php 
+            $big = 9999999991; // уникальное число
+            echo paginate_links( array(
+              'format' => '?page=%#%',
+              'total' => $query_sites->max_num_pages,
+              'current' => $current_page,
+              'prev_next' => true,
+              'next_text' => (''),
+              'prev_text' => (''),
+            )); 
+          ?>
+        </div>
       </div>
     </div>
   </div>
