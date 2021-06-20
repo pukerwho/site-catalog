@@ -142,13 +142,13 @@ function register_taxonomy_list() {
 add_action( 'init', 'register_taxonomy_list');
 
 function editLoginPageTitle() {
-  return 'Dansite';
+  return 'sb.com.ru';
 }
 
 add_action('login_headertext', 'editLoginPageTitle');
 
 function editLoginPageTitleUrl() {
-  return 'https://www.dansite.ru/';
+  return 'http://sb.com.ru';
 }
 
 add_action('login_headerurl', 'editLoginPageTitleUrl');
