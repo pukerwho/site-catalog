@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
 <div class="welcome bg-primary">
   <div class="container mx-auto py-8 px-4 md:px-0">
     <div class="w-full md:w-11/12 mx-auto">
@@ -125,9 +123,5 @@
     </div>
   </div>
 </div>
-
-<?php endwhile; else: ?>
-  <p><?php _e('Ничего не найдено'); ?></p>
-<?php endif; ?>
 
 <?php get_footer(); ?>
