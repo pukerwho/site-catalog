@@ -87,6 +87,10 @@ input[type="submit"] {
     margin-bottom: 15px;
   }
 
+.content a {
+    color: var(--color-primary);
+  }
+
 .content p {
     font-size: 1.25rem;
     margin-bottom: 1rem;

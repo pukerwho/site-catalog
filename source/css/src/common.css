@@ -85,6 +85,9 @@ input[type="submit"] {
 		padding: 20px 0;
 		margin-bottom: 15px;
 	}
+	a {
+		color: var(--color-primary);
+	}
 	p {
 		font-size: 1.25rem;
 		margin-bottom: 1rem;
