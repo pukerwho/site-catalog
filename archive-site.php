@@ -111,7 +111,7 @@
             $big = 9999999991; // уникальное число
             echo paginate_links( array(
               'format' => '?page=%#%',
-              'total' => $query_sites->max_num_pages,
+              'total' => $rest_popular->max_num_pages,
               'current' => $current_page,
               'prev_next' => true,
               'next_text' => (''),
