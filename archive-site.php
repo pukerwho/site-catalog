@@ -49,11 +49,12 @@
       <div class="w-full md:w-3/4 flex flex-wrap flex-col">
         <div class="w-full flex flex-wrap mb-6 md:mb-0">
           <?php 
-          $rest_popular = new WP_Query( array( 
+          $current_page = !empty( $_GET['page'] ) ? $_GET['page'] : 1;
+          $custom_query = new WP_Query( array( 
             'post_type' => 'site', 
             'posts_per_page' => 15,
           ) );
-          if ($rest_popular->have_posts()) : while ($rest_popular->have_posts()) : $rest_popular->the_post(); ?>
+          if ($custom_query->have_posts()) : while ($custom_query->have_posts()) : $custom_query->the_post(); ?>
             <div class="w-full md:w-1/3 md:px-4 mb-6">
               <div class="h-full bg-white relative rounded-b-lg pb-4">
                 <a href="<?php the_permalink(); ?>" class="w-full h-full absolute t-0 l-0 z-10"></a>
@@ -108,14 +109,14 @@
         </div>
         <div class="pagination flex justify-center items-center">
           <?php 
-            $big = 9999999991; // уникальное число
+            $big = 9999999969; // уникальное число
             echo paginate_links( array(
-              'format' => '?page=%#%',
-              'total' => $rest_popular->max_num_pages,
-              'current' => $current_page,
-              'prev_next' => true,
-              'next_text' => (''),
-              'prev_text' => (''),
+            'format' => '?page=%#%',
+            'current'   => $current_page,
+            'total'   => $custom_query->max_num_pages,
+            'prev_next' => true,
+            'next_text' => (''),
+            'prev_text' => ('')
             )); 
           ?>
         </div>
