@@ -100,4 +100,12 @@ input[type="submit"] {
 			list-style-type: disc;
 		}
 	}
+	ol {
+		margin-left: 1rem;
+		margin-bottom: 1rem;
+		li {
+			font-size: 1.25rem;
+			list-style-type: decimal;
+		}
+	}
 }

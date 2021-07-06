@@ -125,6 +125,16 @@ input[type="submit"] {
   list-style-type: disc;
 }
 
+.content ol {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.content ol li {
+  font-size: 1.25rem;
+  list-style-type: decimal;
+}
+
 .header_toggle {
   width: 32px;
   height: 32px;
