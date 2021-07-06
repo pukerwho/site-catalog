@@ -39,6 +39,12 @@
           -ms-transform: translateY(-1px) rotate(-45deg);
           transform: translateY(-1px) rotate(-45deg);
         }
+  .header_menu li {
+      margin-right: 1rem;
+    }
+  .header_menu li:last-of-type {
+        margin-right: 0;
+      }
 
 .mobile-menu {
   width: 100%;
@@ -218,3 +224,18 @@
 .comment-form-cookies-consent label {
     opacity: 0.75;
   }
+
+.footer_menu ul {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+    }
+
+.footer_menu li {
+      margin-right: 1rem;
+    }
+
+.footer_menu li:last-of-type {
+        margin-right: 0;
+      }

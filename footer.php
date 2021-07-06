@@ -6,7 +6,7 @@
         <div>
           © 2021 SB - <?php _e('Каталог сайтов', 'dan'); ?>
         </div>
-        <div class="mb-4 md:mb-0">
+        <div class="footer_menu mb-4 md:mb-0">
           <?php wp_nav_menu([
             'theme_location' => 'main_footer',
             'menu_id' => 'main_footer',

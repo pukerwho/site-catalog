@@ -26,7 +26,7 @@
             <span></span>
             <span></span>
           </div>
-          <div class="hidden md:block">
+          <div class="header_menu hidden md:block">
             <?php wp_nav_menu([
               'theme_location' => 'main_header',
               'menu_id' => 'main_header',

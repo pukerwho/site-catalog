@@ -41,7 +41,7 @@
 
 <div class="container mx-auto py-10 px-4 md:px-0">
   <div class="w-full md:w-11/12 mx-auto">
-    <div class="flex flex-col-reverse md:flex-row">
+    <div class="flex flex-col-reverse md:flex-row mb-5">
       <div class="w-full md:w-1/4 mr-8">
         <div class="bg-white rounded-lg">
           <div class="text-xl font-medium border-bottom-light px-6 py-4">
@@ -143,6 +143,12 @@
             )); 
           ?>
         </div>
+      </div>
+    </div>
+    <div class="w-full">
+      <div class="content bg-white rounded-lg p-6">
+        <?php $cat_text = carbon_get_term_meta( get_queried_object_id(), 'crb_dan_category_text' ); ?>
+        <?php echo apply_filters( 'the_content', $cat_text  ); ?>  
       </div>
     </div>
   </div>

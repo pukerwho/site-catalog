@@ -17,7 +17,7 @@
 						</a>
 					</div>
 					<div>
-						<a href="#" class="block bg-white text-center text-black rounded px-8 py-4">
+						<a href="/add" class="block bg-white text-center text-black rounded px-8 py-4">
 							<?php _e('Добавить сайт', 'dansite'); ?>	
 						</a>
 					</div>
