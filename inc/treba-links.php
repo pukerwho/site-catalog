@@ -5584,8 +5584,8 @@ function update_seo_links() {
       $count_links_array = count($all_seo_links[$i]['links']) - 1;
       $a = random_int(0,$count_links_array);
 
-      $random_links = $all_seo_links[$i]['links'][0];
-      // echo $prepare_link;
+      $random_links = $all_seo_links[$i]['links'][$a];
+      
 
       array_push($prepare_links, $random_links);  
     }
