@@ -5604,10 +5604,10 @@ function update_all_seo_links_hotels() {
   $posts_array = get_posts( $args );
   foreach($posts_array as $post_array) {
     $links = update_seo_links();
-    $current_seo_links = get_post_meta($post_array->ID, 'treba_seo_links');
+    $current_seo_links = get_post_meta($post_array->ID, 'treba_seo_links_new');
     // Для тех, у кого еще не заполнено мета-поле, добавляем элементы (условно для новых страниц)
     if (empty($current_seo_links)) {
-      update_post_meta($post_array->ID, 'treba_seo_links', $links); 
+      update_post_meta($post_array->ID, 'treba_seo_links_new', $links); 
     }
   }
 }
