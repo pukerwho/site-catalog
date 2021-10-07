@@ -215,4 +215,19 @@
 	</div>
 </div>
 
+<div class="container mx-auto px-4 md:px-0 mb-12">
+	<div class="w-full md:w-11/12 mx-auto">
+		<h2 class="text-3xl font-bold mb-6">
+			<?php _e('Полезные ссылки', 'dansite'); ?>
+		</h2>
+		<div class="flex flex-wrap flex-col md:flex-row md:justify-between text-sm bg-white rounded-lg px-4 py-6">
+			<div class="mb-2 md:mb-0"><a href="https://treba-solutions.com/services/sozdanie-lendinga-na-tilde-tilda/" class="hover:text-indigo-700">Заказать сайт на Тильде</a></div>
+			<div class="mb-2 md:mb-0"><a href="https://vidpochivai.com.ua/karpaty/" class="hover:text-indigo-700">Отдых в Карпатах</a></div>
+			<div class="mb-2 md:mb-0"><a href="https://s-cast.ua/cats/znachki-kyiv/" class="hover:text-indigo-700">Значки на заказ в Киеве</a></div>
+			<div class="mb-2 md:mb-0"><a href="https://webgolovolomki.com/seo-optimizacziya-sajta-na-tilde-polnoe-rukovodstvo/" class="hover:text-indigo-700">SEO продвижение на Тильде</a></div>
+			<div><a href="https://www.rooftrade.com.ua/products/truba-profilnaya/" class="hover:text-indigo-700">Купить трубу профильную в Харькове</a></div>
+		</div>
+	</div>
+</div>
+
 <?php get_footer(); ?>

@@ -5615,5 +5615,5 @@ function update_all_seo_links_hotels() {
 add_action('new_to_publish', 'update_all_seo_links_hotels');
 add_action('draft_to_publish', 'update_all_seo_links_hotels');
 add_action('pending_to_publish', 'update_all_seo_links_hotels');
-add_action('init', 'update_all_seo_links_hotels');
+// add_action('init', 'update_all_seo_links_hotels');
 ?>
