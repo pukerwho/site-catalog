@@ -191,3 +191,18 @@ add_shortcode( 'snapshot', function ( $atts ) {
 
   return '<img src="' . esc_attr( $src ) . '" alt="' . esc_attr( $atts['alt'] ) . '" class="w-full h-48 object-cover object-top rounded-t-lg"/>';
 } );
+
+// Создаем счетчик для записей
+function tutCount($id) {
+  
+  if ( metadata_exists( 'post', $id, 'place_count' ) ) {
+    $count_value = get_post_meta( $id, 'place_count', true );
+    $count_value = $count_value + 1;
+    update_post_meta( $id, 'place_count', $count_value );
+  } else {
+    add_post_meta( $id, 'place_count', '200', true);
+  }
+  $place_count = get_post_meta( $id, 'place_count', true );
+  return $place_count;
+  
+};

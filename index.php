@@ -215,6 +215,60 @@
 	</div>
 </div>
 
+<!-- БЛОГ -->
+<div class="container mx-auto px-4 md:px-0 mb-12">
+	<div class="w-full md:w-11/12 mx-auto">
+		<h2 class="text-3xl font-bold mb-6">
+			<?php _e('Полезные статьи', 'dansite'); ?>
+		</h2>
+		<div class="flex flex-col lg:flex-row flex-wrap lg:-mx-4 mb-8">
+			<?php 
+				$home_blogs = new WP_Query( array(
+					'post_type' => 'post',
+					'orderby' => 'date',
+					'post_per_page' => 3,
+				));
+				if ($home_blogs->have_posts()) : while ($home_blogs->have_posts()) : $home_blogs->the_post(); ?>
+				<div class="w-full lg:w-1/3 mb-6 lg:mb-0 lg:px-4">
+					<div class="bg-white border border-gray-300 rounded">
+						<div class="h-52 mb-4">
+							<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="w-full h-full object-cover rounded-t">
+						</div>
+						<div class="text-lg font-semibold text-gray-700 px-4 mb-3">
+							<a href="<?php the_permalink(); ?>">
+								<?php the_title(); ?>
+							</a>
+						</div>
+						<div class="text-sm font-light text-gray-700 px-4 mb-3">
+							<?php 
+								$content_text = wp_strip_all_tags( get_the_content() );
+								echo mb_strimwidth($content_text, 0, 105, '...');
+							?>
+						</div>
+						<div class="flex items-center text-gray-700 text-sm px-4 pb-4">
+							<div class="border-r pr-4 mr-4">
+								<?php echo get_the_date('d.m.Y'); ?>
+							</div>
+							<div class="flex items-center">
+								<div class="mr-2">
+									<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+									  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+									  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+									</svg>
+								</div>
+								<div>
+									<?php echo get_post_meta( get_the_ID(), 'place_count', true ); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<?php endwhile; endif; wp_reset_postdata(); ?>
+		</div>
+	</div>
+</div>
+<!-- END БЛОГ -->
+
 <div class="container mx-auto px-4 md:px-0 mb-12">
 	<div class="w-full md:w-11/12 mx-auto">
 		<h2 class="text-3xl font-bold mb-6">
