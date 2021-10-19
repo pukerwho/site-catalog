@@ -20,7 +20,7 @@
       <!-- Left -->
       <div class="w-full md:w-8/12 md:px-4 md:-mt-16">
         <div class="bg-white rounded-lg mb-6">
-          <div class="px-5 py-10">
+          <div class="content px-5 py-10">
             <?php the_content(); ?>  
           </div>
         </div>
