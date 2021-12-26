@@ -5563,7 +5563,20 @@ function update_seo_links() {
     '<a href="https://www.rooftrade.com.ua/products/setka-svarnaya-vr/">сетка сварная черная</a>',
     '<a href="https://www.rooftrade.com.ua/products/setka-svarnaya-vr/">сетка сварная штукатурная</a>',
       )
-    )
+    ),
+    5 =>
+    array (
+      'site' => 'priazovka',
+      'links' => array (
+        '<a href="https://priazovka.com/meduzi-na-arabatke/">медузы на Арабатской стрелке</a>',
+        '<a href="https://priazovka.com/kurorts-arabatskaya-strelka/">где лучше отдыхать на Арабатской стрелке</a>',
+        '<a href="https://priazovka.com/kurorts-arabatskaya-strelka/">курорты Арабатской стрелке</a>',
+        '<a href="https://priazovka.com/formula-one-live/">где смотреть Формулу-1</a>',
+        '<a href="https://priazovka.com/">приазовская правда</a>',
+        '<a href="https://priazovka.com/">https://priazovka.com/</a>',
+        '<a href="https://priazovka.com/">геническая газета</a>',
+      )
+    ),
   );
 
   $random_i_array = array();
@@ -5573,7 +5586,7 @@ function update_seo_links() {
   while (count($random_i_array) < 5) {
 
     // Получаем случайное число соответсвующее какому-то объекту
-    $i = random_int(0,4);
+    $i = random_int(0,5);
 
     if (!in_array($i, $random_i_array)) {
 
