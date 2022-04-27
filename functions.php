@@ -5,7 +5,7 @@ include('inc/enqueues.php');
 function customThemeSupport() {
     global $wp_version;
     add_theme_support( 'menus' );
-    add_theme_support('woocommerce');
+    // add_theme_support('woocommerce');
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'title-tag' );
     if( version_compare( $wp_version, '3.0', '>=' ) ) {
@@ -19,7 +19,7 @@ add_action( 'after_setup_theme', 'customThemeSupport' );
 require_once get_template_directory() . '/inc/carbon-fields/carbon-fields-plugin.php';
 require_once get_template_directory() . '/inc/custom-fields/post-meta.php';
 require_once get_template_directory() . '/inc/custom-fields/term-meta.php';
-require_once get_template_directory() . '/inc/treba-links.php';
+// require_once get_template_directory() . '/inc/treba-links.php';
 
 function genich_scripts() {
     wp_enqueue_style( 'tailwind', get_stylesheet_directory_uri() . '/build/css/tailwind.css', false, time() );

@@ -312,21 +312,6 @@
 
           </div>
         </div>
-
-        <div class="other-site-links bg-white rounded-lg">
-          <div class="text-lg border-bottom-light py-3"><span  class="px-4"><?php _e('Полезные ресурсы', 'dansite'); ?></span></div>
-          <div class="py-3">
-            <?php 
-              $treba_seo_links = get_post_meta(get_the_ID(), 'treba_seo_links_new', true); 
-              foreach($treba_seo_links as $seo_link): ?>
-                <?php if($seo_link): ?>
-                  <div class="text-sm opacity-75 hover:text-blue-800 px-4 mb-2">
-                    <?php echo $seo_link; ?>  
-                  </div>
-                <?php endif; ?>
-            <?php endforeach; ?>
-          </div>
-        </div>
       </div>
       <!-- END Right -->
     </div>

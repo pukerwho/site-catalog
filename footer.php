@@ -1,4 +1,17 @@
 </section>
+
+<div class="container mx-auto px-4 md:px-0 mb-12">
+  <div class="w-full md:w-11/12 mx-auto">
+    <h2 class="text-3xl font-bold mb-6">
+      <?php _e('Полезные ссылки', 'dansite'); ?>
+    </h2>
+    <div class="flex flex-wrap flex-col md:flex-row md:justify-between text-sm bg-white rounded-lg px-4 py-6">
+      <?php do_shortcode('[render-treba-links]'); ?>
+      <?php echo do_shortcode('[render-treba-top-links]'); ?>  
+    </div>
+  </div>
+</div>
+
 <footer id="footer" class="footer">
   <div class="container mx-auto px-4 md:px-0">
     <div class="w-full md:w-11/12 mx-auto">
