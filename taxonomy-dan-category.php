@@ -6,16 +6,13 @@
   ));
   $current_blog_cat_id = get_queried_object_id();
   $current_blog_cat = get_term($current_blog_cat_id, 'dan-category'); 
-?>
 
-<?php 
   $current_page = !empty( $_GET['page'] ) ? $_GET['page'] : 1;
 
   $query_sites = new WP_Query( array( 
     'post_type' => 'site', 
-    'posts_per_page' => 15,
+    'posts_per_page' => -1,
     'order'    => 'DESC',
-    'paged' => $current_page,
     'tax_query' => array(
       array(
         'taxonomy' => 'dan-category',
@@ -33,7 +30,7 @@
     <div class="w-full md:w-11/12 mx-auto">
       <h1 class="text-4xl md:text-5xl font-bold text-white mb-4"><?php echo $current_blog_cat->name ?></h1>
       <div class="text-2xl text-white opacity-90">
-        <?php _e('Кол-во сайтов в этой категории', 'dansite') ?>: <?php echo count($query_sites); ?>
+        <?php _e('Кол-во сайтов в этой категории', 'dansite') ?>: <?php echo if ($query_sites ? count($query_sites) : '0'; ?>
       </div>
     </div>
   </div>
