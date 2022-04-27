@@ -5,7 +5,7 @@
     <h2 class="text-3xl font-bold mb-6">
       <?php _e('Полезные ссылки', 'dansite'); ?>
     </h2>
-    <div class="flex flex-wrap flex-col md:flex-row md:justify-between text-sm bg-white rounded-lg px-4 py-6">
+    <div class="treba-links flex flex-wrap flex-col md:flex-row md:justify-between text-sm bg-white rounded-lg px-4 py-6">
       <?php do_shortcode('[render-treba-links]'); ?>
       <?php echo do_shortcode('[render-treba-top-links]'); ?>  
     </div>
