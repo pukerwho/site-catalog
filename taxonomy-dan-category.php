@@ -11,7 +11,8 @@
 
   $query_sites = new WP_Query( array( 
     'post_type' => 'site', 
-    'posts_per_page' => -1,
+    'posts_per_page' => 15,
+    'paged' => $current_page,
     'order'    => 'DESC',
     'tax_query' => array(
       array(
