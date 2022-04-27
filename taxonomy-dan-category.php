@@ -30,7 +30,7 @@
     <div class="w-full md:w-11/12 mx-auto">
       <h1 class="text-4xl md:text-5xl font-bold text-white mb-4"><?php echo $current_blog_cat->name ?></h1>
       <div class="text-2xl text-white opacity-90">
-        <?php _e('Кол-во сайтов в этой категории', 'dansite') ?>: <?php echo if ($query_sites ? count($query_sites) : '0'; ?>
+        <?php _e('Кол-во сайтов в этой категории', 'dansite') ?>: <?php echo ($query_sites) ? count($query_sites) : '0'; ?>
       </div>
     </div>
   </div>
