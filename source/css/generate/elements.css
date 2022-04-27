@@ -122,10 +122,8 @@
 
 .breadcrumbs ul {
     display: -webkit-box;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
@@ -203,11 +201,9 @@
 
 .comment-form-cookies-consent {
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
   font-size: 0.85rem;
@@ -225,9 +221,17 @@
     opacity: 0.75;
   }
 
+.treba-links {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
+
+.treba-links a {
+    padding: 0 1rem;
+  }
+
 .footer_menu ul {
       display: -webkit-box;
-      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
     }

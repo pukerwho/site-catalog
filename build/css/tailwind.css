@@ -986,11 +986,6 @@ video {
   color: rgba(30, 64, 175, var(--tw-text-opacity));
 }
 
-.hover\:text-indigo-700:hover {
-  --tw-text-opacity: 1;
-  color: rgba(67, 56, 202, var(--tw-text-opacity));
-}
-
 .italic {
   font-style: italic;
 }
