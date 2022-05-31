@@ -200,7 +200,7 @@
             </div>
             <div class="site_tab_content" data-site_tab="Reviews">
               <div class="mb-4">
-                <?php _e('Количество голосов', 'dansite'); ?>: <?php echo carbon_get_the_post_meta('rating_count'); ?>
+                <?php _e('Количество голосов', 'dansite'); ?>: <?php echo carbon_get_the_post_meta('crb_site_rating_count'); ?>
               </div>
               <div>
                 <?php comments_template(); ?>
