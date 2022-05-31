@@ -203,7 +203,7 @@
                 <?php _e('Количество голосов', 'dansite'); ?>: <?php echo carbon_get_the_post_meta('rating_count'); ?>
               </div>
               <div>
-                <?php get_template_part('blocks/custom_comments'); ?>
+                <?php comments_template(); ?>
               </div>
             </div>
             <div class="site_tab_content" data-site_tab="Similar">
