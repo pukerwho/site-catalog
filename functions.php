@@ -20,6 +20,7 @@ require_once get_template_directory() . '/inc/carbon-fields/carbon-fields-plugin
 require_once get_template_directory() . '/inc/custom-fields/post-meta.php';
 require_once get_template_directory() . '/inc/custom-fields/term-meta.php';
 require_once get_template_directory() . '/inc/comments-functions.php';
+require_once get_template_directory() . '/inc/super-links/super-functions.php';
 // require_once get_template_directory() . '/inc/treba-links.php';
 
 function genich_scripts() {

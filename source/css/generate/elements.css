@@ -227,7 +227,9 @@
 }
 
 .treba-links a {
+    display: inline-block;
     padding: 0 1rem;
+    margin-bottom: 0.5rem;
   }
 
 .footer_menu ul {
